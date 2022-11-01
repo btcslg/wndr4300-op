@@ -156,7 +156,6 @@
 			label = "caldata_backup";
 			reg = <0x7fc0000 0x40000>;
 			read-only;
-
 		};
 	};
 };
