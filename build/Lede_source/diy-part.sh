@@ -49,6 +49,10 @@ sed -i '/CYXluq4wUazHjmCDBCqXF/d' "${ZZZ_PATH}"
 #修改默认ssid
 sed -i 's/ssid=OpenWrt/ssid=mijia/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
+# 开启128MB flash（去掉下面代码前面的#生效，本人在网上收集的，没经测试）
+#sed -i s/'23552k(ubi),25600k@0x6c0000(firmware)'/'120832k(ubi),122880k@0x6c0000(firmware)'/ target/linux/ar71xx/image/legacy.mk
+sed -i 's/25600k/121m/g' target/linux/ath79/image/nand.mk
+
 # 删除默认防火墙
 sed -i '/to-ports 53/d' "${ZZZ_PATH}"
 
